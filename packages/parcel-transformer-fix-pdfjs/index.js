@@ -34,7 +34,10 @@ const REPLACEMENT_CODE = `async function() {
 module.exports = new Transformer({
   async transform({ asset, logger }) {
     let code = await asset.getCode();
-    if (!code.includes("fakeWorkerFilesLoader")) {
+    if (
+      !asset.filePath.endsWith("pdfjs-dist/build/pdf.js") ||
+      !code.includes("fakeWorkerFilesLoader")
+    ) {
       return [asset];
     }
     logger.info({
