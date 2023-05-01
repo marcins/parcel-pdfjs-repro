@@ -1,5 +1,6 @@
 {
   "name": "parcel-pdf",
+  "private": true,
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
@@ -12,5 +13,8 @@
     "punycode": "^1.4.1",
     "querystring-es3": "^0.2.1",
     "url": "^0.11.0"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
